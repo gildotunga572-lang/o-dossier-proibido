@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Hero } from './components/Hero';
 import { Legacy } from './components/Legacy';
 import { Quotes } from './components/Quotes';
@@ -8,41 +8,11 @@ import { FinalCTA } from './components/FinalCTA';
 import { BookOpen, Video, Mail, ShieldCheck, Lock, ThumbsUp, Shield } from 'lucide-react';
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
-
-  // Intro Animation Logic
-  useEffect(() => {
-    // Disable scrolling during intro
-    document.body.style.overflow = 'hidden';
-    const timer = setTimeout(() => {
-      setLoading(false);
-      document.body.style.overflow = 'unset';
-    }, 3500);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className="min-h-screen bg-brand-dark text-gray-100 font-sans">
      
-      {/* INTRO OVERLAY */}
-      <div className={`fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center transition-opacity duration-1000 ${loading ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-          <div className="max-w-3xl px-6 text-center">
-              <p className="text-brand-green text-xs font-bold tracking-[0.3em] uppercase mb-8 animate-pulse">
-                  Conexão Segura Estabelecida...
-              </p>
-              <h1 className="text-2xl md:text-4xl font-serif text-white italic leading-tight mb-8">
-                  "Quando as balas inimigas transpassarem o meu corpo,<br/>
-                  terei cumprido a minha missão."
-              </h1>
-              <div className="flex flex-col items-center gap-2">
-                 <div className="h-0.5 w-32 bg-brand-gold opacity-50"></div>
-                 <span className="text-[10px] text-gray-500 font-mono">Carregando Dossiê 2026</span>
-              </div>
-          </div>
-      </div>
-
       {/* Header Glass */}
-      <header className={`fixed top-0 left-0 w-full z-50 glass border-b border-white/5 transition-transform duration-700 ${loading ? '-translate-y-full' : 'translate-y-0'}`}>
+      <header className="fixed top-0 left-0 w-full z-50 glass border-b border-white/5">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-brand-green flex items-center justify-center rounded-sm shadow-[0_0_15px_rgba(0,100,0,0.5)]">
@@ -67,7 +37,7 @@ export default function App() {
         </div>
       </header>
      
-      <main className={`transition-opacity duration-1000 delay-500 ${loading ? 'opacity-0' : 'opacity-100'}`}>
+      <main>
         <Hero />
         <Legacy />
         <Quotes />

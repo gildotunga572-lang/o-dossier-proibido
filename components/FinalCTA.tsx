@@ -12,7 +12,7 @@ export const FinalCTA: React.FC = () => {
     setTimeout(() => setCopied(null), 2000);
   };
 
-  // CORRECT LINK FROM USER
+  // LINKS OFICIAIS ATUALIZADOS
   const REDTPAY_LINK = "https://url.hk/i/pt/xdy3k";
   const SUPPORT_LINK = "https://wa.me/244951279380?text=Ol%C3%A1%2C%20estou%20com%20dificuldade%20no%20pagamento%20Redtpay.";
 
@@ -20,14 +20,14 @@ export const FinalCTA: React.FC = () => {
     <section id="final-cta" className="py-24 bg-[#050505] border-t border-white/5 relative overflow-hidden">
         
         {/* Background Grid Texture */}
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
             
             <div className="text-center mb-16">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-green/30 bg-brand-green/10 mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-green/30 bg-brand-green/10 mb-6">
                     <ShieldCheck size={14} className="text-brand-green" />
-                    <span className="text-xs font-bold text-brand-green uppercase tracking-wider">Terminal Seguro SSL 256-bit</span>
+                    <span className="text-xs font-bold text-brand-green uppercase tracking-wider">Checkout Seguro SSL 256-bit</span>
                 </div>
                 <h2 className="text-3xl md:text-5xl font-serif text-white mb-4">Acesso Imediato</h2>
                 <p className="text-gray-400">Escolha o seu método preferido. Sem taxas ocultas.</p>
@@ -64,12 +64,12 @@ export const FinalCTA: React.FC = () => {
                     </button>
 
                     <div className="mt-8 pt-8 border-t border-white/5">
-                        <h4 className="text-gray-400 font-bold text-xs uppercase tracking-widest mb-4">Precisa de Ajuda?</h4>
+                        <h4 className="text-gray-400 font-bold text-xs uppercase tracking-widest mb-4">Dúvidas no Pagamento?</h4>
                         <a href={SUPPORT_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-[#0a0a0a] border border-white/5 hover:border-white/20 rounded-sm transition-colors group">
                             <Mail size={18} className="text-gray-500 group-hover:text-white" />
                             <div>
-                                <p className="text-xs text-gray-500">Suporte Oficial</p>
-                                <p className="text-xs text-white font-mono mt-1">WhatsApp Directo</p>
+                                <p className="text-xs text-gray-500">Suporte WhatsApp</p>
+                                <p className="text-xs text-white font-mono mt-1">Clique para falar</p>
                             </div>
                         </a>
                     </div>
@@ -201,17 +201,6 @@ export const FinalCTA: React.FC = () => {
                                     >
                                         Enviar Comprovativo
                                     </Button>
-                                </div>
-
-                                {/* SUPPORT BUTTON */}
-                                <div className="mt-4 text-center">
-                                    <button 
-                                        onClick={() => window.open(SUPPORT_LINK, '_blank')}
-                                        className="text-[10px] text-gray-500 hover:text-white flex items-center justify-center gap-1 mx-auto transition-colors"
-                                    >
-                                        <HelpCircle size={12} />
-                                        Ajuda com Redtpay? Fale com o Suporte
-                                    </button>
                                 </div>
                             </div>
                         )}
