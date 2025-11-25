@@ -61,12 +61,12 @@
       .perspective-1000 { perspective: 1000px; }
       .book-3d {
         transform-style: preserve-3d;
-        transform: rotateY(-25deg) rotateX(5deg);
+        transform: rotateY(-15deg) rotateX(5deg);
         transition: transform 0.5s ease;
         box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
       }
       .book-3d:hover {
-        transform: rotateY(-15deg) rotateX(0deg) scale(1.02);
+        transform: rotateY(-5deg) rotateX(0deg) scale(1.02);
       }
       
       .btn-shine {
@@ -89,23 +89,21 @@
         100% { left: 100%; }
       }
     </style>
-    <!-- React imports handled by environment or bundler usually, but adding fallback for direct usage -->
-  <script type="importmap">
+    <script type="importmap">
 {
   "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
+    "lucide-react": "https://esm.sh/lucide-react@0.292.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
   }
 }
 </script>
 </head>
   <body>
-    <div id="root">
-        <div style="height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; background: #050505; color: #006400; font-family: monospace;">
-            CARREGANDO O DOSSIÊ...
-        </div>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
